@@ -1,0 +1,20 @@
+*{
+  box-sizing: border-box;
+}
+
+section{
+  background-color: #008001;
+  margin-bottom: 10px;
+  width: 290px;
+  padding: 20px;
+}
+
+p{
+  color: red;
+  font-size: 30px;
+  margin: 0;
+  line-height: 30px;
+  background-color: rgb(255, 255, 0);
+  border: 5px solid black;
+  padding: 25px;
+}

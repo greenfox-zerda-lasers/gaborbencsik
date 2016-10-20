@@ -1,0 +1,29 @@
+*{
+  box-sizing: border-box;
+}
+
+h1{
+  color: blue;
+}
+
+h2{
+  color: #F7A509;
+}
+
+.food-type > li{
+  color: blue;
+  list-style-type: square;
+}
+
+.fruit li{
+  list-style-type: disc;
+  color: black;
+}
+
+.fruit li:first-child{
+  color: red;
+}
+
+.vega > li{
+  color: black;
+}

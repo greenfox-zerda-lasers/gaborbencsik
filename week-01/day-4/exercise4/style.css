@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  color: #007F16;
+}
+
+p{
+  color: black;
+}
+
+p::first-letter{
+  color: red;
+}
+
+span{
+  color: blue;
+  font-style: italic;
+}
+
+pre{
+  color: black;
+}

@@ -1,0 +1,10 @@
+*{
+  box-sizing: border-box;
+}
+
+p{
+  border-left: 2px solid black;
+  width: 300px;
+  padding-left: 20px;
+  font-size: 18px;
+}
