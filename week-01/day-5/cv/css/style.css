@@ -1,0 +1,81 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: 'Lato';
+  font-size: 20px;
+}
+
+header{
+  background: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  margin: 0 auto;
+  width: 100%;
+  height: 500px;
+}
+
+.container{
+  width: 700px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+h1,
+h2{
+  font-size: 50px;
+  color: #B8C4CD;
+  text-shadow: 2px 2px 5px black;
+  font-family: 'Abril Fatface';
+}
+
+h1{
+  font-size: 80px;
+  margin: 0;
+
+}
+
+h2{
+  margin: 0;
+  padding-top: 250px;
+}
+
+p,
+h3{
+  letter-spacing: .6px;
+  word-spacing: 2px;
+
+}
+
+q{
+  background-color: grey;
+  color: white;
+  padding: 40px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+ul{
+  margin-bottom: 30px;
+  letter-spacing: .6px;
+  word-spacing: 2px;
+  /*list-style-type: arrow;*/
+}
+
+h3{
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+h4{
+  font-weight: normal;
+  font-size: 20px;
+}
