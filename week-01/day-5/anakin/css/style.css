@@ -113,6 +113,6 @@ blockquote::before{
   padding-right: 29px;
 }
 
-.line{
+hr{
   border-top: 5px solid #222;
 }
