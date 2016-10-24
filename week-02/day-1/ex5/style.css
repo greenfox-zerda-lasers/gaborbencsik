@@ -1,0 +1,34 @@
+*{
+  box-sizing: border-box;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  height: 480px;
+  background-color: #808080;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+
+.wrapper > div{
+  border: 5px solid black;
+  background-color: #FF6347;
+  flex-grow: 1;
+  width: 180px;
+  margin: 5px;
+  height: 150px;
+  font-size: 35px;
+  font-family: arial;
+}
+
+.textbox{
+  position: relative;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

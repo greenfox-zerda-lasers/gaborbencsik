@@ -1,0 +1,24 @@
+*{
+  box-sizing: border-box;
+}
+
+div{
+  width: 300px;
+  border-bottom: 3px solid #222;
+}
+
+p{
+  text-align: justify;
+}
+
+img{
+  float: left;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.second img{
+  float: right;
+  margin-right: 0;
+  margin-left: 20px;
+}
