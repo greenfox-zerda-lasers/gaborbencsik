@@ -59,6 +59,13 @@ label{
   margin-bottom: 8px;
 }
 
+input{
+  font-size: 14px;
+  font-family: 'Montserrat';
+  padding-top: 10px;
+}
+
+
 input:placeholder-shown,
 textarea,
 .dropmenu{
