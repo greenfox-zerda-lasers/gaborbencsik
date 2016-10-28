@@ -6,46 +6,49 @@
     <title>Margaret Hamilton (scientist) - Wikipedia</title>
   </head>
   <body>
+    <main class="container">
 
-    <header>
-      <nav>
-        <ul>
-          <li>Not logged in</li>
-          <li><a href="#">Talk</a></li>
-          <li><a href="#">Contributions</a></li>
-          <li><a href="#">Create account</a></li>
-          <li><a href="#">Log in</a></li>
-        </ul>
+      <header class="nav-panel">
 
-      </nav>
-      <nav>
-        <ul>
-          <li><a href="#">Article</a></li>
-          <li><a href="#">Talk</a></li>
-        </ul>
-        <ul>
-          <li><a href="#">Read</a></li>
-          <li><a href="#">Edit</a></li>
-          <li><a href="#">View history</a></li>
-        </ul>
-        <form class="" action="index.html" method="post">
-          <input type="serch" name="search" placeholder="Search">
-          <input type="submit" name="name">
+        <nav>
+          <ul class="nav-secondary">
+            <li>Not logged in</li>
+            <li><a href="#">Talk</a></li>
+            <li><a href="#">Contributions</a></li>
+            <li><a href="#">Create account</a></li>
+            <li><a href="#">Log in</a></li>
+          </ul>
 
-        </form>
+        </nav>
+        <nav class="nav-article">
+          <ul class="nav-left">
+            <li><a href="#">Article</a></li>
+            <li><a href="#">Talk</a></li>
+          </ul>
+          <ul class="nav-right">
+            <li><a href="#">Read</a></li>
+            <li><a href="#">Edit</a></li>
+            <li><a href="#">View history</a></li>
+            <li>
+              <form class="" action="index.html" method="post">
+                <input type="serch" name="search" placeholder="Search">
+                <input type="submit" name="name">
+              </form>
+            </li>
+          </ul>
 
-      </nav>
+        </nav>
+      </header>
 
-    </header>
-
-    <main>
-      <article class="">
+      <article class="main-content">
 
         <h1>Margaret Hamilton (scientist)</h1>
+        <span class="trademark">From Wikipedia, the free encyclopedia</span>
+        <span class="clarification">For other people named Margaret Hamilton, see Margaret Hamilton (disambiguation).</span>
 
-        <figure>
-          <figcaption>Margaret Hamilton</figcaption>
-          <img src="images/440px-Margaret_Hamilton_1995.jpg" alt="Margaret Hamilton" />
+        <figure class="contentbox-primary contentbox-style">
+          <figcaption class="image-title">Margaret Hamilton</figcaption>
+          <img src="images/440px-Margaret_Hamilton_1995.jpg" alt="Margaret Hamilton" class="photo-primary" />
           <figcaption>Hamilton in 1995</figcaption>
           <table>
             <tr>
@@ -72,32 +75,30 @@
         </figure>
 
         <p>
-          Margaret Heafield Hamilton (born August 17, 1936)[1] is a computer scientist, systems engineer and business owner. She was Director of the Software Engineering Division[2] of the MIT Instrumentation Laboratory, which developed on-board flight software for the Apollo space program.[3] In 1986, she became the founder and CEO of Hamilton Technologies, Inc., in Cambridge, Massachusetts. The company was developed around the Universal Systems Language based on her paradigm of Development Before the Fact (DBTF) for systems and software design.[4]
+          <strong>Margaret Heafield Hamilton</strong> (born August 17, 1936)[1] is a computer scientist, systems engineer and business owner. She was Director of the Software Engineering Division[2] of the MIT Instrumentation Laboratory, which developed on-board flight software for the Apollo space program.[3] In 1986, she became the founder and CEO of Hamilton Technologies, Inc., in Cambridge, Massachusetts. The company was developed around the Universal Systems Language based on her paradigm of Development Before the Fact (DBTF) for systems and software design.[4]
         </p>
         <p>
           Hamilton has published over 130 papers, proceedings, and reports about the 60 projects and six major programs in which she has been involved.
         </p>
-        <div class="">
+        <div class="nav-content contentbox-style">
           <p>Contents</p>
           <ul>
-            <li><a href="#">Early life</a></li>
-            <li><a href="#">SAGE Project</a></li>
-            <li>
-              <a href="#">NASA</a>
+            <li><a href="#">1 Early life</a></li>
+            <li><a href="#">2 SAGE Project</a></li>
+            <li><a href="#">3 NASA</a>
               <ul>
-                <li><a href="#">Apollo 11</a></li>
+                <li><a href="#">3.1 Apollo 11</a></li>
               </ul>
             </li>
-            <li><a href="#">Business</a></li>
-            <li>
-              <a href="#">Legacy</a>
+            <li><a href="#">4 Business</a></li>
+            <li><a href="#">5 Legacy</a>
               <ul>
-                <li><a href="#">Awards</a></li>
+                <li><a href="#">5.1 Awards</a></li>
               </ul>
             </li>
-            <li><a href="#">Personal life</a></li>
-            <li><a href="#">Publications</a></li>
-            <li><a href="#">References</a></li>
+            <li><a href="#">6 Personal life</a></li>
+            <li><a href="#">7 Publications</a></li>
+            <li><a href="#">8 References</a></li>
           </ul>
         </div>
 
@@ -121,12 +122,12 @@
         </p>
 
         <h2>NASA</h2>
-        <figure>
-          <img src="images/Margaret_Hamilton.gif" alt="Margaret Hamilton" />
+        <figure class="contentbox-secondary contentbox-style">
+          <img src="images/Margaret_Hamilton.gif" alt="Margaret Hamilton" class="photo"/>
           <figcaption>Hamilton standing next to the navigation software that she and her MIT team produced for the Apollo project.</figcaption>
         </figure>
-        <figure>
-          <img src="images/Margaret_Hamilton_in_action.jpg" alt="Margaret Hamilton" />
+        <figure class="contentbox-secondary contentbox-style">
+          <img src="images/Margaret_Hamilton_in_action.jpg" alt="Margaret Hamilton" class="photo"/>
           <figcaption>Hamilton during her time as lead Apollo flight software designer.</figcaption>
         </figure>
         <p>
@@ -146,7 +147,10 @@
         <blockquote cite="http://">
           The computer (or rather the software in it) was smart enough to recognize that it was being asked to perform more tasks than it should be performing. It then sent out an alarm, which meant to the astronaut, I'm overloaded with more tasks than I should be doing at this time and I'm going to keep only the more important tasks; i.e., the ones needed for landing ... Actually, the computer was programmed to do more than recognize error conditions. A complete set of recovery programs was incorporated into the software. The software's action, in this case, was to eliminate lower priority tasks and re-establish the more important ones ... If the computer hadn't recognized this problem and taken recovery action, I doubt if Apollo 11 would have been the successful moon landing it was.[23]
         </blockquote>
-        <cite>— Letter from Margaret H. Hamilton, Director of Apollo Flight Computer Programming MIT Draper Laboratory, Cambridge, Massachusetts[24], titled "Computer Got Loaded", published in Datamation, March 1, 1971</cite>
+        <div class="cite">
+          <cite>— Letter from Margaret H. Hamilton, Director of Apollo Flight Computer Programming MIT Draper Laboratory, Cambridge, Massachusetts[24], titled "Computer Got Loaded", published in Datamation, March 1, 1971</cite>
+        </div>
+
 
         <h2>Businesses</h2>
         <p>
@@ -160,8 +164,8 @@
         </p>
 
         <h2>Legacy</h2>
-        <figure>
-          <img src="images/Margaret_Hamilton_1989.jpg" alt="Margaret Hamilton" />
+        <figure class="contentbox-small contentbox-style">
+          <img src="images/Margaret_Hamilton_1989.jpg" alt="Margaret Hamilton" class="photo-small"/>
           <figcaption>Official photo for NASA, 1989.</figcaption>
         </figure>
         <p>
@@ -169,7 +173,7 @@
         </p>
 
         <h3>Awards</h3>
-        <ul>
+        <ul class="content-list">
           <li>In 1986, she received the Augusta Ada Lovelace Award by the Association for Women in Computing.[6] This award is given to individuals who have excelled in either (or both) of two areas: 1. Outstanding scientific and technical achievement and 2. Extraordinary service to the computing community through their accomplishments and contributions on behalf of women in computing.[45]</li>
           <li>In 2003, she was given the NASA Exceptional Space Act Award for scientific and technical contributions. The award included $37,200, the largest amount awarded to any individual in NASA's history.[14][46][47]</li>
           <li>In 2009, she received the Outstanding Alumni Award by Earlham College.[6]</li>
@@ -184,7 +188,7 @@
         </p>
 
         <h2>Publications</h2>
-        <ul>
+        <ul class="content-list">
           <li>M. Hamilton (1994), "Inside Development Before the Fact," cover story, Special Editorial Supplement, 8ES-24ES. Electronic Design, Apr. 1994.</li>
           <li>M. Hamilton (1994), "001: A Full Life Cycle Systems Engineering and Software Development Environment," cover story, Special Editorial Supplement, 22ES-30ES. Electronic Design, Jun. 1994.</li>
           <li>M. Hamilton, Hackler, W. R.. (2004), Deeply Integrated Guidance Navigation Unit (DI-GNU) Common Software Architecture Principles (revised dec-29-04), DAAAE30-02-D-1020 and DAAB07-98-D-H502/0180, Picatinny Arsenal, NJ, 2003-2004.</li>
@@ -201,90 +205,84 @@
           <li></li>
         </ul>
 
-
-
-
-
-
-
       </article>
-
     </main>
-    <aside class="">
-      <a href="#"><img src="" alt="" /></a>
-      <nav>
 
-        <ul>
-          <li><a href="#">Main Page</a></li>
-          <li><a href="#">Contents</a>
-          <li><a href="#">Featured content</a></li>
-          <li><a href="#">Current events</a></li>
-          <li><a href="#">Random article</a></li>
-          <li><a href="#">Donate to Wikipedia</a></li>
-          <li><a href="#">Wikipedia store</a></li>
-        </ul>
+      <aside class="nav-primary">
+        <a href="#"><img src="images/enwiki-2x.png" alt="wikipedia logo" class="logo"/></a>
+        <nav>
 
-        <h4>Interaction</h4>
-        <ul>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">About Wikipedia</a></li>
-          <li><a href="#">Community portal</a></li>
-          <li><a href="#">Recent changes</a></li>
-          <li><a href="#">Contact page</a></li>
-        </ul>
+          <ul>
+            <li><a href="#">Main page</a></li>
+            <li><a href="#">Contents</a>
+            <li><a href="#">Featured content</a></li>
+            <li><a href="#">Current events</a></li>
+            <li><a href="#">Random article</a></li>
+            <li><a href="#">Donate to Wikipedia</a></li>
+            <li><a href="#">Wikipedia store</a></li>
+          </ul>
 
-        <h4>Tools</h4>
-        <ul>
-          <li><a href="#">What links here</a></li>
-          <li><a href="#">Related changes</a></li>
-          <li><a href="#">Upload file</a></li>
-          <li><a href="#">Spacial pages</a></li>
-          <li><a href="#">Permanent link</a></li>
-          <li><a href="#">Page information</a></li>
-          <li><a href="#">Wikidata item</a></li>
-          <li><a href="#">Cite this page</a></li>
-        </ul>
+          <h4>Interaction</h4>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About Wikipedia</a></li>
+            <li><a href="#">Community portal</a></li>
+            <li><a href="#">Recent changes</a></li>
+            <li><a href="#">Contact page</a></li>
+          </ul>
 
-        <h4>Print/export</h4>
-        <ul>
-          <li><a href="#">Create a book</a></li>
-          <li><a href="#">Download as PDF</a></li>
-          <li><a href="#">Printable version</a></li>
-        </ul>
+          <h4>Tools</h4>
+          <ul>
+            <li><a href="#">What links here</a></li>
+            <li><a href="#">Related changes</a></li>
+            <li><a href="#">Upload file</a></li>
+            <li><a href="#">Spacial pages</a></li>
+            <li><a href="#">Permanent link</a></li>
+            <li><a href="#">Page information</a></li>
+            <li><a href="#">Wikidata item</a></li>
+            <li><a href="#">Cite this page</a></li>
+          </ul>
 
-        <h4>In other projects</h4>
-        <ul>
-          <li><a href="#">Wikimedia Commons</a></li>
-        </ul>
+          <h4>Print/export</h4>
+          <ul>
+            <li><a href="#">Create a book</a></li>
+            <li><a href="#">Download as PDF</a></li>
+            <li><a href="#">Printable version</a></li>
+          </ul>
 
-        <h4>Languages</h4>
-        <ul>
-          <li><a href="#">العربية</a></li>
-          <li><a href="#">Български</a></li>
-          <li><a href="#">Català</a></li>
-          <li><a href="#">Deutsch</a></li>
-          <li><a href="#">Español</a></li>
-          <li><a href="#">Euskara</a></li>
-          <li><a href="#">فارسی</a></li>
-          <li><a href="#">Français</a></li>
-          <li><a href="#">Gaeilge</a></li>
-          <li><a href="#">한국어</a></li>
-          <li><a href="#">Ido</a></li>
-          <li><a href="#">Italiano</a></li>
-          <li><a href="#">עברית</a></li>
-          <li><a href="#">日本語</a></li>
-          <li><a href="#">Occitan</a></li>
-          <li><a href="#">ଓଡ଼ିଆ</a></li>
-          <li><a href="#">Português</a></li>
-          <li><a href="#">Русский</a></li>
-          <li><a href="#">Svenska</a></li>
-          <li><a href="#">Tiếng Việt</a></li>
-          <li><a href="#">中文</a></li>
-        </ul>
+          <h4>In other projects</h4>
+          <ul>
+            <li><a href="#">Wikimedia Commons</a></li>
+          </ul>
 
-      </nav>
+          <h4>Languages</h4>
+          <ul>
+            <li><a href="#">العربية</a></li>
+            <li><a href="#">Български</a></li>
+            <li><a href="#">Català</a></li>
+            <li><a href="#">Deutsch</a></li>
+            <li><a href="#">Español</a></li>
+            <li><a href="#">Euskara</a></li>
+            <li><a href="#">فارسی</a></li>
+            <li><a href="#">Français</a></li>
+            <li><a href="#">Gaeilge</a></li>
+            <li><a href="#">한국어</a></li>
+            <li><a href="#">Ido</a></li>
+            <li><a href="#">Italiano</a></li>
+            <li><a href="#">עברית</a></li>
+            <li><a href="#">日本語</a></li>
+            <li><a href="#">Occitan</a></li>
+            <li><a href="#">ଓଡ଼ିଆ</a></li>
+            <li><a href="#">Português</a></li>
+            <li><a href="#">Русский</a></li>
+            <li><a href="#">Svenska</a></li>
+            <li><a href="#">Tiếng Việt</a></li>
+            <li><a href="#">中文</a></li>
+          </ul>
 
-    </aside>
+        </nav>
+
+      </aside>
 
     <footer>
 
