@@ -67,6 +67,10 @@ cite{
   font-style: normal;
 }
 
+li:hover{
+  text-decoration: underline;
+}
+
 .cite{
   padding-left: 60px;
   font-style: normal;
@@ -76,12 +80,36 @@ cite{
 .nav-panel{
   display: flex;
   flex-direction: column;
+
 }
 
 .nav-secondary{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  font-size: 12px;
+  line-height: 13.8px;
+  text-decoration: none;
+  color: #0645ad;
+  font-family: sans-serif;
+}
+
+.nav-secondary a{
+  text-decoration: none;
+  color: #0645ad;
+}
+
+.nav-secondary li{
+  margin-right: 10px;
+}
+
+.nav-secondary li:first-child{
+  color: #707070;
+  text-decoration: none;
+}
+
+.nav-secondary li:last-child{
+  margin-right: 15px;
 }
 
 .nav-secondary > li,
@@ -94,16 +122,80 @@ cite{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: sans-serif;
+  font-size: 12.8px;
+  line-height: 18px;
+  border-bottom: 1px solid rgb(167, 215, 249);
+}
+
+.nav-article ul{
+  margin-top: 0;
+  margin-bottom: 0px;
+  padding-left: 0;
+}
+
+.nav-article a{
+  color: #0645ad;
+  display: block;
+  padding-left: 5px;
+  padding-bottom: 8px;
+  text-decoration: none;
+}
+
+.nav-article li{
+  display: inline-block;
+
 }
 
 .nav-left{
   display: flex;
   flex-direction: row;
+
+}
+
+.nav-left li{
+  border-right: 1px solid rgb(167, 215, 249);
+  padding-right: 5px;
 }
 
 .nav-right{
   display: flex;
   flex-direction: row;
+}
+
+.nav-right li{
+  border-right: 1px solid rgb(167, 215, 249);
+  padding-right: 5px;
+
+}
+
+.nav-right a{
+  background: linear-gradient (to bottom, #fff, #0645ad);
+  
+}
+
+.nav-right li:first-child{
+  border-left: 1px solid rgb(167, 215, 249);
+  background-color:
+}
+
+/*.nav-item-active{
+  color: #333;
+  text-decoration: none;
+
+}*/
+
+.form-style{
+  margin: 0 8px 0 8px;
+
+}
+
+input[type="submit"]{
+  display: none;
+}
+
+input[type="search"]{
+
 }
 
 .nav-primary{
@@ -157,11 +249,11 @@ cite{
 .container{
   border: 1px solid rgb(167, 215, 249);
   border-top: 0;
+  border-right: 0;
 }
 
 .main-content{
   padding: 16px;
-  border-top: 1px solid rgb(167, 215, 249);
 }
 
 .photo-primary{
