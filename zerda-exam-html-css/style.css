@@ -1,0 +1,70 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.container{
+  left: 100px;
+  position: absolute;
+  top: 100px;
+}
+
+.card{
+  display: flex;
+  font-size: 14px;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.card h1{
+  font-size: 28px;
+  font-weight: lighter;
+  line-height: 20px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.card p{
+  margin-bottom: 20px;
+}
+
+.card img{
+  height: 180px;
+  width: 180px;
+}
+
+.card table{
+  border-spacing: 0;
+}
+
+.card td:first-child{
+  font-weight: bold;
+  width: 100px;
+}
+
+.john,
+.jane{
+  background-color: #FFFFF1;
+  border-left: 10px solid #556392;
+  font-family: Arial, sans-serif;
+  padding: 25px 20px 25px 20px;
+  position: relative;
+  width: 360px;
+}
+
+.jane{
+  background-color: #ACB8DF;
+}
+
+.duck{
+  display: inline-block;
+}
+
+.edit-icon{
+  background: url(edit-icon.png);
+  bottom: 20px;
+  height: 24px;
+  position: absolute;
+  right: 20px;
+  width: 24px;
+}
