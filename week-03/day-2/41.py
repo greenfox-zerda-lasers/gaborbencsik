@@ -13,7 +13,7 @@ students = [
 
 def count_kids(list):
     count_name = 0
-    for child in students:
+    for child in list:
         if child['candies'] > 4:
             count_name += 1
     return count_name
