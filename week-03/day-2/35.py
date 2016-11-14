@@ -6,4 +6,4 @@ def factor(input):
         result *= x
     return result
 
-print factor(5)
+print (factor(5))
