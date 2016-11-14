@@ -18,7 +18,7 @@ class FileLines():
     def get_first(self):
         return self.opener(0)
 
-    def get_nth(sefl, number):
+    def get_nth(self, number):
         return self.opener[number]
 
 lines = FileLines('alma.txt')
