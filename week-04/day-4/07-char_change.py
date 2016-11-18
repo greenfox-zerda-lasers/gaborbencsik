@@ -11,7 +11,7 @@ def char_change(text):
         return ""
     else:
         if text[0] == "x":
-            return "y" + char_change(text[1:])
+            return "" + char_change(text[1:])
         else:
             return text[0] + char_change(text[1:])
 

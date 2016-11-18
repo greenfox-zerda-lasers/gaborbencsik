@@ -4,16 +4,16 @@ ah = [3, 4, 5, 6, 7]
 i = 0
 for c in range(len(ah)):
     i += ah[c]
-print i
+print (i)
 
 #
 
 v = 0
 for x in ah:
     v += x
-print v
+print (v)
 
 #
 
 b = sum(ah)
-print b
+print (b)
