@@ -1,4 +1,4 @@
-first
-second
-third
-etc...
+completed; first
+doing; second
+completed; third
+doing; etc...

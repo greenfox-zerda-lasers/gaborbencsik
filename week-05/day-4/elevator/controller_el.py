@@ -48,7 +48,6 @@ class Controller:
             self.view.print_text("intro")
             self.movement()
 
-
     def movement(self):
         move = self.get_command()
         if move == "w":
@@ -61,12 +60,6 @@ class Controller:
             self.model.remove_people()
         elif move == "q":
             exit()
-
-
-
-
-
-
 
 Test_elevator = Controller()
 Test_elevator.game_play()
