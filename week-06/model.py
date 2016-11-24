@@ -1,6 +1,7 @@
 import random
 
 class Character:
+
     tilemap = [
         [1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1],
         [1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0],
@@ -17,8 +18,6 @@ class Character:
 
         self.hero_position = [0, 0, "down"] # x= vizszint y=függö
         self.skeleton_list = []
-        self.create_skeletons()
-
 
     def movement_validation(self, new_position):
         if new_position[1] < 0 or new_position[1] > len(self.tilemap):
@@ -26,7 +25,7 @@ class Character:
 
         if new_position[0] < 0 or new_position[0] > len(self.tilemap)-1:
             return False
-        print(new_position)
+        # print(new_position)
 
         if self.tilemap[new_position[0]][new_position[1]] == 0:
             return False
@@ -49,33 +48,32 @@ class Character:
         self.hero_position[0] += 1
         self.hero_position[2] = "right"
 
-    def create_skeletons(self):
-        for i in range(random.randint(2,6)):
-            skeleton = Skeleton()
-            self.skeleton_list.append(skeleton)
-            print(i)
-
-            #Hogyan lehetne a skeletonokat dictionarybe beküldeni?
-
 class Skeleton:
 
-    def __init__(self):
+    def __init__(self, position):
+        self.position = position
         self.tilemap = Character.tilemap
-        self.position = self.position_validation()
 
-    def move_enemy(self):
-        pass
+    def movement_validation(self, new_position):
+        if new_position[1] < 0 or new_position[1] > len(self.tilemap):
+            return False
 
-    def position_validation(self):
-        starting_position = [random.randint(0,9),random.randint(0,10)]
-        print(starting_position)
+        if new_position[0] < 0 or new_position[0] > len(self.tilemap)-1:
+            return False
 
-        # Hogyan lehetne ezeket a listába hozzápárosítani a lista elemekhez dictionaryként?
+        if self.tilemap[new_position[0]][new_position[1]] == 0:
+            return False
 
-        if self.tilemap[starting_position[0]][starting_position[1]] == 0:
-            return self.position_validation()
+        return new_position
 
-        if self.position_validation == [0,0]:
-            return self.position_validation()
+    def move_skeleton_down(self):
+        self.position[1] += 1
 
-        return starting_position
+    def move_skeleton_up(self):
+        self.position[1] -= 1
+
+    def move_skeleton_left(self):
+        self.position[0] -= 1
+
+    def move_skeleton_right(self):
+        self.position[0] += 1

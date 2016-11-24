@@ -5,7 +5,7 @@ class GameMap:
 
     def __init__(self):
         self.size = 60
-        self.max_width = 15
+        self.max_width = 10
         self.max_height = 11
         self.root = Tk()
         self.floor = ImageTk.PhotoImage(file="./floor.gif")
@@ -44,13 +44,15 @@ class GameMap:
         elif position[2] == "right":
             self.super_hero = self.canvas.create_image(position[0]*self.size,position[1]*self.size, image = self.hero_right, anchor=NW)
 
-    def draw_skeleton_group(self, skeleton_list):
-        for skeleton in skeleton_list:
-            self.draw_skeleton(skeleton)
-            print(skeleton)
+    def draw_skeleton(self, position):
 
-    def draw_skeleton(self, skeleton):
-        self.canvas.create_image(skeleton.position[0] * self.size, skeleton.position[1] * self.size, image = self.skeleton, anchor=NW)
+        self.canvas.create_image(position[0] * self.size, position[1] * self.size, image = self.skeleton, anchor=NW, tag="skeleton")
+        print(position)
+
+    def draw_skeleton_group(self, skeleton_list):
+        self.canvas.delete("skeleton")
+        for skeleton in skeleton_list:
+            self.draw_skeleton(skeleton.position)
 
     def draw_boss(self):
         self.canvas.delete(self.super_boss)
@@ -58,7 +60,6 @@ class GameMap:
 
     def mainloop(self):
         self.root.mainloop()
-
 
 class StatLabel:
     pass
