@@ -45,7 +45,6 @@ class GameMap:
             self.super_hero = self.canvas.create_image(position[0]*self.size,position[1]*self.size, image = self.hero_right, anchor=NW)
 
     def draw_skeleton(self, position):
-
         self.canvas.create_image(position[0] * self.size, position[1] * self.size, image = self.skeleton, anchor=NW, tag="skeleton")
         print(position)
 
@@ -54,9 +53,9 @@ class GameMap:
         for skeleton in skeleton_list:
             self.draw_skeleton(skeleton.position)
 
-    def draw_boss(self):
+    def draw_boss(self, position):
         self.canvas.delete(self.super_boss)
-        self.super_boss = self.canvas.create_image(9 * self.size, 10 * self.size, image = self.boss, anchor=NW)
+        self.super_boss = self.canvas.create_image(position[0] * self.size, position[1] * self.size, image = self.boss, anchor=NW)
 
     def mainloop(self):
         self.root.mainloop()

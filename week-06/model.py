@@ -15,21 +15,17 @@ class Character:
         [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
 
     def __init__(self):
-
         self.hero_position = [0, 0, "down"] # x= vizszint y=függö
+        self.boss_position = [9, 10]
         self.skeleton_list = []
 
     def movement_validation(self, new_position):
         if new_position[1] < 0 or new_position[1] > len(self.tilemap):
             return False
-
         if new_position[0] < 0 or new_position[0] > len(self.tilemap)-1:
             return False
-        # print(new_position)
-
         if self.tilemap[new_position[0]][new_position[1]] == 0:
             return False
-
         return True
 
     def move_down(self):
@@ -48,6 +44,18 @@ class Character:
         self.hero_position[0] += 1
         self.hero_position[2] = "right"
 
+    def move_down_boss(self):
+        self.boss_position[1] += 1
+
+    def move_up_boss(self):
+        self.boss_position[1] -= 1
+
+    def move_left_boss(self):
+        self.boss_position[0] -= 1
+
+    def move_right_boss(self):
+        self.boss_position[0] += 1
+
 class Skeleton:
 
     def __init__(self, position):
@@ -57,13 +65,10 @@ class Skeleton:
     def movement_validation(self, new_position):
         if new_position[1] < 0 or new_position[1] > len(self.tilemap):
             return False
-
         if new_position[0] < 0 or new_position[0] > len(self.tilemap)-1:
             return False
-
         if self.tilemap[new_position[0]][new_position[1]] == 0:
             return False
-
         return new_position
 
     def move_skeleton_down(self):
