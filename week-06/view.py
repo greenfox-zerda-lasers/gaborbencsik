@@ -18,9 +18,8 @@ class GameMap:
         self.skeleton = ImageTk.PhotoImage(file="./skeleton.gif")
         self.boss = ImageTk.PhotoImage(file="./boss.gif")
         self.super_boss = None
-        self.canvas = Canvas(self.root, width= self.max_width * self.size, height= (self.max_height + 2) * self.size)
-        self.stat_line = Label(self.root, text='Ide jön a stat')
-        self.stat_line.pack(side='right')
+        self.canvas = Canvas(self.root, width= self.max_width * self.size, height= (self.max_height + 2) * self.size, bg="black")
+        # self.canvas.create_text(self.root, )
         self.canvas.pack()
         self.canvas.focus_set()
 

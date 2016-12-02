@@ -45,12 +45,12 @@ class Game:
         self.life -= 1
 
     def change_hidden_word(self):
-        valami = False
+        well_guessed = False
         for i in range(len(self.random_word)):                  #
             if self.random_word[i] == self.guess:               #
                 self.hidden_word[i] = self.guess                #
-                valami = True
-        if not valami:
+                well_guessed = True
+        if not well_guessed:
             self.decrease_life()
 
 hangman_game = Game()
