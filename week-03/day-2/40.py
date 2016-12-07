@@ -16,4 +16,4 @@ def student_list(list):
     return num_candy
 
 
-print student_list(students)
+print (student_list(students))
