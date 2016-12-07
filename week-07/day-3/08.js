@@ -13,3 +13,14 @@ var students = [
 // create a function that counts the students that
 // has more than 4 candies
 
+function countStudents (arr) {
+  var counter = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].candies > 4){
+      counter++;
+    }
+  }
+  return counter;
+}
+
+console.log(countStudents(students));
