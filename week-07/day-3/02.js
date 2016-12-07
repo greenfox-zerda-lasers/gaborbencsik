@@ -5,6 +5,6 @@
 
 apply(console.log); // should log apple
 
-function apply(word) {
-  return word("apple")
+function apply(func) {
+  return func("apple");
 }
