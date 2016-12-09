@@ -11,21 +11,27 @@
     </header>
     <main>
       <section class="wrapper">
-        <h1>Noé's photos</h1>
+        <h1 class="title">Photo Gallery</h1>
         <div class="hero-image">
-          <img class="border-style"src="images/sample-image.png" alt="">
-        </div>
-        <div class="tumbnail-images">
-          <img class="border-style"src="images/sample-image.png" alt="">
-          <img class="border-style"src="images/sample-image.png" alt="">
-          <img class="border-style"src="images/sample-image.png" alt="">
-          <img class="border-style"src="images/sample-image.png" alt="">
-          <img class="border-style"src="images/sample-image.png" alt="">
+          <div class="previous"></div>
+          <div class="hero-photo photo1"><p class="description">ide jön a szöveg</p></div>
+          <div class="next"></div>
 
         </div>
+        <nav class="tumbnail-images">
+          <!-- <a href="#"><div class="previous"></div></a> -->
+          <div class="tumbnail photo1" id="1"></div>
+          <div class="tumbnail photo2" id="2"></div>
+          <div class="tumbnail photo3" id="3"></div>
+          <div class="tumbnail photo4" id="4"></div>
+          <div class="tumbnail photo5" id="5"></div>
+          <!-- <a href="#"><div class="next"></div></a> -->
+
+        </nav>
       </section>
 
     </main>
+    <script src="script.js" type="text/javascript"></script>
 
   </body>
 </html>

@@ -8,7 +8,14 @@ html {
 
 main {
   margin: 0 auto;
-  width: 90%;
+  width: 95%;
+}
+
+body{
+  background-size: cover;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAATklEQVQYVx3KsQ0AEBBA0c8loiBxDQ1DMIb9WxMYQEmieN0zc85bayXnzDmHtRZ7b1prmDHGFRFijJRSSCn95JzD9N4vgLX2894TQkBVeSMtEkl9JW2nAAAAAElFTkSuQmCC");
+  /*background-image: url(images/christmas_background.jpg);*/
+  /*background-image: url(images/snow_background.jpeg);*/
 }
 
 .wrapper {
@@ -24,34 +31,91 @@ main {
 }
 
 .hero-image {
-  width: 90%;
+  margin-bottom: 3rem;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  align-items: center;
 }
 
-.hero-image img {
-  width: 60%;
+.hero-photo {
+  width: 30vw;
+  height: 40.02vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  border: .4vw solid black;
+  border-radius: 1rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.previous {
+  background-image: url(images/arrow-left-b.png);
+  background-size: cover;
+  width: 10vw;
+  height: 10vw;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.next {
+  background-image: url(images/arrow-right-b.png);
+  background-size: cover;
+  width: 10vw;
+  height: 10vw;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.description {
+  background: rgba(128,128,128, .5);
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  text-align: center;
+  border: .1rem solid rgba(128,128,128, .8);
+  padding: .5rem;
+  border-radius: .5rem;
 }
 
 .tumbnail-images {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.tumbnail-images img {
-  width: calc(20% - 4rem / 5);
-  height: calc(20% - 4rem / 5);
+.tumbnail {
+  height: 13.34vw;
+  width: 10vw;
   margin-left: 1rem;
-}
-
-.tumbnail-images img:first-child {
-  margin-left: 0;
-}
-
-.border-style {
-  border: .1rem solid black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+  border: .4vw solid black;
   border-radius: 1rem;
+}
+
+.photo4 {
+  background-image: url("photos/4.jpg");
+
+}
+.photo5 {
+  background-image: url("photos/5.jpg");
+
+}
+.photo1 {
+  background-image: url("photos/1.jpg");
+
+}
+.photo2 {
+  background-image: url("photos/2.jpg");
+
+}
+.photo3 {
+  background-image: url("photos/3.jpg");
+}
+
+.tumbnail-images .tumbnail:first-child {
+  margin-left: 0;
 }
