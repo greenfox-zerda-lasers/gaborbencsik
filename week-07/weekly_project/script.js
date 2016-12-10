@@ -35,14 +35,13 @@ createTumbnails();
 rightArrow.addEventListener('click', moveRight);
 leftArrow.addEventListener('click', moveLeft);
 
+// loop-ba:
+
 firstTumb.addEventListener('click', goToPhoto);
 secondTumb.addEventListener('click', goToPhoto);
 thirdTumb.addEventListener('click', goToPhoto);
 fourthTumb.addEventListener('click', goToPhoto);
 fifthTumb.addEventListener('click', goToPhoto);
-
-
-// beállítani a kezdö képeket
 
 function validateIndex() {
   if (imageIndex === photoAmount) {
@@ -118,13 +117,13 @@ function createTumbnails () {
 
   } else {
     tumbnails.children[1].style.backgroundImage = "url(photos/" +  photos[imageIndex-1]["file"] + ")";
-      tumbnails.children[1].dataset.index = imageIndex-1;
+    tumbnails.children[1].dataset.index = imageIndex-1;
     tumbnails.children[0].style.backgroundImage = "url(photos/" +  photos[imageIndex-2]["file"] + ")";
-      tumbnails.children[0].dataset.index = imageIndex-2;
+    tumbnails.children[0].dataset.index = imageIndex-2;
     tumbnails.children[3].style.backgroundImage = "url(photos/" +  photos[imageIndex+1]["file"] + ")";
-      tumbnails.children[3].dataset.index = imageIndex+1;
+    tumbnails.children[3].dataset.index = imageIndex+1;
     tumbnails.children[4].style.backgroundImage = "url(photos/" +  photos[imageIndex+2]["file"] + ")";
-      tumbnails.children[4].dataset.index = imageIndex+2;
+    tumbnails.children[4].dataset.index = imageIndex+2;
 
   }
 }

@@ -16,6 +16,8 @@ body{
 	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAATklEQVQYVx3KsQ0AEBBA0c8loiBxDQ1DMIb9WxMYQEmieN0zc85bayXnzDmHtRZ7b1prmDHGFRFijJRSSCn95JzD9N4vgLX2894TQkBVeSMtEkl9JW2nAAAAAElFTkSuQmCC");
   /*background-image: url(images/christmas_background.jpg);*/
   /*background-image: url(images/snow_background.jpeg);*/
+  filter: brightness(1.1);
+
 }
 
 .wrapper {
@@ -66,7 +68,7 @@ body{
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  transition: all .5s ease;
+  transition: all .7s ease;
 }
 
 .previous {
@@ -85,6 +87,11 @@ body{
   height: 10vw;
   margin-left: 1rem;
   cursor: pointer;
+}
+
+.previous:hover,
+.next:hover {
+  opacity: .4;
 }
 
 .description {
@@ -117,6 +124,12 @@ body{
   border-radius: 1rem;
   cursor: pointer;
   transition: all .5s ease-out;
+}
+
+.tumbnail:hover {
+  opacity: .5;
+  width: 11vw;
+  height: 14.674vw;
 }
 
 .tumbnail-images .tumbnail:first-child {
