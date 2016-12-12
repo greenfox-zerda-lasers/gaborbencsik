@@ -16,13 +16,15 @@ function Rockets (consumption) {
 
 Rockets.prototype.fill = function (amount) {
   this.inTank += amount;
+
   console.log(this.inTank + " fuel in tank");
 };
 
 Rockets.prototype.launch = function () {
-  if (this.inTank > this.consumption) {
-    this.launches++;
+  if (this.inTank >= this.consumption) {
     this.inTank -= this.consumption;
+    this.launches++;
+
     console.log(this.inTank + " fuel left.");
     console.log("The Rocket has launched " + this.launches + "time(s)");
   }

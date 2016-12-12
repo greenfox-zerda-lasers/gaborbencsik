@@ -12,11 +12,11 @@ function Rectangles (x,y) {
 }
 
 Rectangles.prototype.getArea = function () {
-  return 2*this.x + 2*this.y;
+  return this.x*this.y;
 };
 
 Rectangles.prototype.getCircumference = function () {
-  return this.x*this.y;
+  return 2*this.x + 2*this.y;
 };
 
 var smallRect = new Rectangles (4, 5);
