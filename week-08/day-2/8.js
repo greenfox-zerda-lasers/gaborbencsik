@@ -8,7 +8,6 @@
 
 
 function tour (walk, distance) {
-
   return distance(8).map(walk);
 }
 
