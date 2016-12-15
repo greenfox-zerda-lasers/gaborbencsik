@@ -18,31 +18,34 @@ function App () {
 
   };
 
-  function postTask () {
+  this.postTask = function postTask () {
     console.log('clicked');
-    this.ajax.sendPostRequest();
-    this.ajax.sendGetRequest(this.renderList.bind(this));
-  }
+    console.log(this);
+    this.ajax.sendPostRequest(this.input.value);
 
-  function deleteTask () {
+  };
+
+  this.deleteTask = function (event) {
+    console.log(event);
     console.log('deleted');
-    this.ajax.sendDeleteRequest();
-    this.ajax.sendGetRequest(this.renderList.bind(this));
-  }
+    this.ajax.sendDeleteRequest(event.target.previousElementSibling.id);
+    // document.parentNode.removeChild(event.target);
 
-  function changeTaskStatus (event) {
+  };
+
+  this.changeTaskStatus = function (event) {
     console.log(event);
     console.log('changed');
     changeCheckboxUi(event);
-    this.ajax.sendGetRequest(this.renderList.bind(this));
-  }
+    // this.ajax.sendGetRequest(this.renderList.bind(this));
+  };
 
 //     UI
 
   var button = document.querySelector('button');
-  var input = document.querySelector('.input');
-  var trash = document.querySelectorAll('.ion-ios-trash-outline');
-  var checkbox = document.querySelectorAll('.checkbox');
+  this.input = document.querySelector('.input');
+  this.trash = document.querySelectorAll('.ion-ios-trash-outline');
+  this.checkbox = document.querySelectorAll('.checkbox');
   var listContainer = document.querySelector('.todo-list');
   var taskText = document.querySelectorAll('span');
 
@@ -66,6 +69,8 @@ function App () {
     var trashI = document.createElement('i');
     listItem.appendChild(trashI);
     trashI.classList.add("ion-ios-trash-outline");
+    console.log(this);
+    trashI.addEventListener('click', this.deleteTask.bind(this));
 
     var checkboxI = document.createElement('i');
     listItem.appendChild(checkboxI);
@@ -81,16 +86,16 @@ function App () {
 
   this.addEvents = function () {
     // window.addEventListener('load', );
-    button.addEventListener('click', postTask);
-    trash.forEach(function (e) {
-      e.addEventListener('click', deleteTask);
+    button.addEventListener('click', this.postTask.bind(this));
+    this.trash.forEach(function (e) {
+      e.addEventListener('click', this.deleteTask);
     });
-    checkbox.forEach(function (e) {
+    this.checkbox.forEach(function (e) {
       e.addEventListener('click', changeTaskStatus);
     });
   };
 
-  var changeCheckboxUi = function (event) {  /*                                     ez hogy lenne this-es??  */
+  var changeCheckboxUi = function (event) {  /*                           Nem tudom, hogy ez végül fog-e kelleni  */
     // if (taskText.dataset.completed === false) {
     //   event.target.classList.remove("ion-checkmark-circled");
     //   event.target.classList.add("ion-ios-circle-outline");
@@ -115,7 +120,7 @@ function Ajax () {
   var getRequest = function(method, resource, data, callback) {
     var request = new XMLHttpRequest();
     request.open(method,'https://mysterious-dusk-8248.herokuapp.com/'+ resource, true);
-    request.setRequestHeader("Content-type", "applicaion/json");
+    request.setRequestHeader("Content-Type", "application/json");
     request.send(data);
 
     request.onreadystatechange = function (response) {
@@ -131,12 +136,13 @@ function Ajax () {
     getRequest('GET', "todos", null, callback);
   };
 
-  this.sendPostRequest = function () {
-    getRequest('POST', "todos", app.input.value, callback);
+  this.sendPostRequest = function (input, callback) {
+    console.log(input);
+    getRequest('POST', "todos", JSON.stringify({text: input}), callback);
   };
 
-  var sendDeleteRequest = function () {
-    getRequest('DELETE', "todos"+data.id, null);
+  this.sendDeleteRequest = function (id) {
+    getRequest('DELETE', "todos/"+id, null);
   };
 
   // var sendPutRequest = function () {
