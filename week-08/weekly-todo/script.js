@@ -60,6 +60,7 @@ function App () {
     var listItem = document.createElement('li');
     listContainer.appendChild(listItem);
     listItem.classList.add("todo-item");
+    listItem.setAttribute('id', id);
     var span = document.createElement('span');
     listItem.appendChild(span);
     span.classList.add("task-name");
