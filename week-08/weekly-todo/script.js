@@ -13,31 +13,38 @@ function App () {
     this.ajax = new Ajax ();
     console.log(this);
     this.ajax.sendGetRequest(this.renderList.bind(this));
-    // window.addEventListener('load', this.addEvents);
-    this.addEvents();
+    this.addButtonEvent();
 
   };
 
   this.postTask = function postTask () {
     console.log('clicked');
     console.log(this);
-    this.ajax.sendPostRequest(this.input.value);
+    var validInput = this.input.value;
+    if (validInput.length === 0) {
+      validInput = "No task name";
+    }
+    listContainer.innerHTML = "";
+    this.ajax.sendPostRequest(validInput, function (){this.ajax.sendGetRequest(this.renderList.bind(this));}.bind(this));
+    this.input.value = "";
 
   };
 
   this.deleteTask = function (event) {
     console.log(event);
     console.log('deleted');
-    this.ajax.sendDeleteRequest(event.target.previousElementSibling.id);
-    // document.parentNode.removeChild(event.target);
+    listContainer.innerHTML = "";
+    this.ajax.sendDeleteRequest(event.target.previousElementSibling.id, function (){this.ajax.sendGetRequest(this.renderList.bind(this));}.bind(this));
 
   };
 
   this.changeTaskStatus = function (event) {
     console.log(event);
     console.log('changed');
-    changeCheckboxUi(event);
-    // this.ajax.sendGetRequest(this.renderList.bind(this));
+    console.log(event.target.parentNode.dataset.completed);
+    listContainer.innerHTML = "";
+    this.ajax.sendPutRequest(event.target.parentNode.id, event.target.parentNode.textContent, event.target.parentNode.dataset.completed, function (){this.ajax.sendGetRequest(this.renderList.bind(this));}.bind(this));
+
   };
 
 //     UI
@@ -50,10 +57,13 @@ function App () {
   var taskText = document.querySelectorAll('span');
 
   this.renderList = function(data) {
-
+    listContainer.classList.remove("is-loaded");
     data.forEach(function(item) {
       this.createList(item.text,item.id, item.completed);
     }.bind(this));
+    setTimeout(function() {
+      listContainer.classList.add("is-loaded");
+    }, 0);
   };
 
   this.createList = function(text, id, completed) {
@@ -61,6 +71,8 @@ function App () {
     listContainer.appendChild(listItem);
     listItem.classList.add("todo-item");
     listItem.setAttribute('id', id);
+    listItem.dataset.completed = completed;
+
     var span = document.createElement('span');
     listItem.appendChild(span);
     span.classList.add("task-name");
@@ -70,49 +82,44 @@ function App () {
     var trashI = document.createElement('i');
     listItem.appendChild(trashI);
     trashI.classList.add("ion-ios-trash-outline");
-    console.log(this);
+
     trashI.addEventListener('click', this.deleteTask.bind(this));
+    trashI.style.cursor = "pointer";
 
     var checkboxI = document.createElement('i');
     listItem.appendChild(checkboxI);
     checkboxI.classList.add("checkbox");
+    checkboxI.addEventListener('click', this.changeTaskStatus.bind(this));
+    checkboxI.style.cursor = "pointer";
 
     if (completed == true) {
       checkboxI.classList.add("ion-checkmark-circled");
     } else if (completed == false) {
       checkboxI.classList.add("ion-ios-circle-outline");
     }
-
   };
 
-  this.addEvents = function () {
-    // window.addEventListener('load', );
+  this.addButtonEvent = function () {
+    this.input.addEventListener('keyup', function (e) {
+      console.log(e.code);
+      if (e.code == "Enter") {
+        this.postTask.bind(this)();
+      }
+    }.bind(this));
     button.addEventListener('click', this.postTask.bind(this));
-    this.trash.forEach(function (e) {
-      e.addEventListener('click', this.deleteTask);
-    });
-    this.checkbox.forEach(function (e) {
-      e.addEventListener('click', changeTaskStatus);
-    });
+    button.style.cursor = "pointer";
   };
 
-  var changeCheckboxUi = function (event) {  /*                           Nem tudom, hogy ez végül fog-e kelleni  */
-    // if (taskText.dataset.completed === false) {
-    //   event.target.classList.remove("ion-checkmark-circled");
-    //   event.target.classList.add("ion-ios-circle-outline");
-    // } else if (taskText.dataset.completed === true) {
-    //   event.target.classList.remove("ion-ios-circle-outline");
-    //   event.target.classList.add("ion-checkmark-circled");
-    // }
-    if (event.target.classList.contains("ion-ios-circle-outline")) {
-      event.target.classList.remove("ion-ios-circle-outline");
-      event.target.classList.add("ion-checkmark-circled");
-    } else if (event.target.classList.contains("ion-checkmark-circled")) {
-      event.target.classList.remove("ion-checkmark-circled");
-      event.target.classList.add("ion-ios-circle-outline");
-    }
-  };
+  //    Validation
+
 }
+
+
+
+
+
+
+
 
 function Ajax () {
 
@@ -139,22 +146,23 @@ function Ajax () {
 
   this.sendPostRequest = function (input, callback) {
     console.log(input);
-    getRequest('POST', "todos", JSON.stringify({text: input}), callback);
+    getRequest('POST', "todos", JSON.stringify({"text": input}), callback);
   };
 
-  this.sendDeleteRequest = function (id) {
-    getRequest('DELETE', "todos/"+id, null);
+  this.sendDeleteRequest = function (id, callback) {
+    getRequest('DELETE', "todos/"+id, null, callback);
   };
 
-  // var sendPutRequest = function () {
-  //   getRequest('PUT',"todos"+data.id, );
+  this.sendPutRequest = function (id, input, completed, callback) {
+    getRequest('PUT',"todos/"+id, JSON.stringify({"text": input, "completed": !JSON.parse(completed)}), callback);
+  };
+
+  // this.sendDeleteAllTaskRequest = function (id, callback) {
+  //
+  //   getRequest('DELETE', "todos/"+id, null, callback);
   // };
 
-
-
-
 }
-
 
 var todo = new App ();
 todo.init()
