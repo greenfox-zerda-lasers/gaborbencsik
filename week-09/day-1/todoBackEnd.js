@@ -59,8 +59,9 @@ server.put('/todos/:id', function post(req, res) {
 server.delete('/todos/:id', function post(req, res) {
   var taskToDelete = req.params.id;
   function deleteTask (item) {
-    return item.id !== parseInt(taskToDelete)
+    return item.id !== parseInt(taskToDelete);
   }
+  data = data.filter(deleteTask);
   res.send(data.filter(deleteTask));
 });
 
