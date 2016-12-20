@@ -4,6 +4,7 @@
 
 html {
   font-size: 62.5%;
+  background-image: linear-gradient(rgb(94, 183, 187), rgb(43, 118, 121));
 }
 
 main {
@@ -13,9 +14,10 @@ main {
 
 body{
   background-size: cover;
-	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAATklEQVQYVx3KsQ0AEBBA0c8loiBxDQ1DMIb9WxMYQEmieN0zc85bayXnzDmHtRZ7b1prmDHGFRFijJRSSCn95JzD9N4vgLX2894TQkBVeSMtEkl9JW2nAAAAAElFTkSuQmCC");
+	/*background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAADCAYAAABfwxXFAAAATklEQVQYVx3KsQ0AEBBA0c8loiBxDQ1DMIb9WxMYQEmieN0zc85bayXnzDmHtRZ7b1prmDHGFRFijJRSSCn95JzD9N4vgLX2894TQkBVeSMtEkl9JW2nAAAAAElFTkSuQmCC");*/
   /*background-image: url(images/christmas_background.jpg);*/
   /*background-image: url(images/snow_background.jpeg);*/
+  /*background-image: linear-gradient(rgb(94, 183, 187), rgb(43, 118, 121));*/
   filter: brightness(1.1);
 
 }

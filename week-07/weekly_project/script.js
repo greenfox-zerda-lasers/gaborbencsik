@@ -71,15 +71,28 @@ function changePhoto() {
   descriptionText.innerHTML = photos[imageIndex]["description"];
 }
 
+// function drawInLoop () {
+//   for (var i = 0; i < 4; i++) {
+//     drawTumbnail(i, imageIndex);
+//   }
+// }
+//
+//
+// function drawTumbnail (state, imgIndex) {
+//   tumbnails.children[state].style.backgroundImage = "url(photos/" +  photos[imgIndex]["file"] + ")";
+//   tumbnails.children[state].dataset.index = photos[imgIndex];
+// }
+
+
 function createTumbnails () {
   tumbnails.children[2].style.backgroundImage = "url(photos/" +  photos[imageIndex]["file"] + ")";
   tumbnails.children[2].dataset.index = imageIndex;
 
   if (imageIndex === 0) {
-    tumbnails.children[1].style.backgroundImage = "url(photos/" +  photos[photoAmount-1]["file"] + ")";
-    tumbnails.children[1].dataset.index = photos[photoAmount-1];
     tumbnails.children[0].style.backgroundImage = "url(photos/" +  photos[photoAmount-2]["file"] + ")";
     tumbnails.children[0].dataset.index = photos[photoAmount-2];
+    tumbnails.children[1].style.backgroundImage = "url(photos/" +  photos[photoAmount-1]["file"] + ")";
+    tumbnails.children[1].dataset.index = photos[photoAmount-1];
     tumbnails.children[3].style.backgroundImage = "url(photos/" +  photos[imageIndex+1]["file"] + ")";
     tumbnails.children[3].dataset.index = imageIndex+1;
     tumbnails.children[4].style.backgroundImage = "url(photos/" +  photos[imageIndex+2]["file"] + ")";
@@ -127,10 +140,9 @@ function createTumbnails () {
 
   }
 }
+console.log(this.dataset.index);
 
 function goToPhoto (event) {
-  console.log(this.dataset.index);
-
   imageIndex = parseInt(this.dataset.index);
   validateIndex();
   changePhoto();
