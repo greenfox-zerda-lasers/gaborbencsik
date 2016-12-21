@@ -78,10 +78,10 @@ function App() {
     checkboxI.addEventListener('click', this.changeTaskStatus.bind(this));
     checkboxI.style.cursor = "pointer";
 
-    if (completed == true) {
+    if (completed === 1) {
       checkboxI.classList.add("ion-checkmark-circled");
       span.classList.add("checked");
-    } else if (completed == false) {
+    } else if (completed === 0) {
       checkboxI.classList.add("ion-ios-circle-outline");
     }
   };
@@ -109,7 +109,7 @@ function Ajax () {
     request.setRequestHeader("Content-Type", "application/json");
     request.send(data);
 
-    request.onreadystatechange = function (response) {
+    request.onreadystatechange = function f(response) {
       var todoData;
       if (request.readyState === XMLHttpRequest.DONE) {
         todoData = JSON.parse(request.response);

@@ -1,5 +1,7 @@
 'use strict';
 
+var mysql = require('mysql');
+
 var express = require('express');
 
 var bodyParser = require('body-parser');
@@ -8,9 +10,21 @@ var server = express();
 
 var data = require('./data.json');
 
-var c = 0;
+var connection = mysql.createConnection({
+  host: 'localhost',     /* ide kell tenni, hogy hol van a szerver*/
+  user: 'root',
+  password: '1988',
+  database: 'todo',
+});
 
-var idNumber = data.length;
+connection.connect(function connectMsql(error) {
+  if (error) {
+    console.log('JAAAJ hiba', error);
+  } else {
+    console.log('Sikerült');
+  }
+});
+console.log('idáig lefut');
 
 server.use(function use(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -23,56 +37,45 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
 server.get('/todos', function get(req, res) {
-  res.send(data);
-});
-
-server.get('/todos/task/:id', function getId(req, res) {
-  res.send( 'The requested task is: ' + JSON.stringify(data[parseInt(req.params.id)]));
+  connection.query('SELECT id, text, completed FROM todo_list;', function getCallback(err, rows) {
+    if (err) {
+      console.log(err.toString());
+      return;
+    }
+    res.send(rows);
+  });
 });
 
 server.post('/todos', function post(req, res) {
-  var text = req.body.text;
-  var completed = false;
-  idNumber++;
-  data.push({
-    'completed': completed,
-    'id': idNumber,
-    'text': text,
-  });
-  res.send(data[data.length - 1]);
-});
-
-server.put('/todos/:id', function post(req, res) {
-  // var text = req.body.text;
-  var completed = req.body.completed;
-  var taskToModify = req.params.id;
-  console.log(typeof(completed));
-  data.forEach( function(item, index) {
-    if (item.id == taskToModify) {
-        data[index].completed = completed;
+  connection.query('INSERT INTO todo_list (text, completed) VALUES (\'' + req.body.text + '\', 0);', function postCallback(err, row) {
+    if (err) {
+      console.log(err.toString());
+      return;
     }
+    console.log('lefut ez?');
+    res.send(row);
   });
-
-  res.send(data);
 });
 
-server.delete('/todos/:id', function post(req, res) {
-  var taskToDelete = req.params.id;
-  function deleteTask (item) {
-    return item.id !== parseInt(taskToDelete);
-  }
-  data = data.filter(deleteTask);
-  res.send(data.filter(deleteTask));
+server.delete('/todos/:id', function dropitem(req, res) {
+  connection.query('DELETE FROM todo_list WHERE id = \'' + req.params.id + '\';', function getCallback(err, rows) {
+    if (err) {
+      console.log(err.toString());
+      return;
+    }
+    res.send(rows);
+  });
 });
 
-server.get('/counter', function counter(req, res) {
-  c++;
-  res.send( 'value: ' + c);
-});
-
-server.get('/all-task-created', function counter(req, res) {
-  console.log(idNumber);
-  res.send( 'Task created: ' + idNumber);
+server.put('/todos/:id', function put(req, res) {
+  connection.query('UPDATE todo_list SET completed = NOT completed WHERE id = \'' + req.params.id + '\';', function getCallback(err, rows) {
+    if (err) {
+      console.log(err.toString());
+      return;
+    }
+    res.send(rows);
+  });
 });
 
 server.listen(3000);
+// connection.end();
