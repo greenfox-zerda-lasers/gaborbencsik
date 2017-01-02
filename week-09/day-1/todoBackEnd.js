@@ -8,8 +8,6 @@ var bodyParser = require('body-parser');
 
 var server = express();
 
-var data = require('./data.json');
-
 var connection = mysql.createConnection({
   host: 'localhost',     /* ide kell tenni, hogy hol van a szerver*/
   user: 'root',
@@ -24,7 +22,6 @@ connection.connect(function connectMsql(error) {
     console.log('Sikerült');
   }
 });
-console.log('idáig lefut');
 
 server.use(function use(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -52,7 +49,6 @@ server.post('/todos', function post(req, res) {
       console.log(err.toString());
       return;
     }
-    console.log('lefut ez?');
     res.send(row);
   });
 });
