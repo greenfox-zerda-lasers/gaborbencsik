@@ -4,4 +4,223 @@
 
 html {
   font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+main, header {
+  width: 70rem;
+  margin: 0 auto;
+}
+
+header {
+  margin-top: 5rem;
+}
+
+main {
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  border: .2rem solid rgba(234,234,234,.5);
+}
+
+i, .song-text, .song-info, .playlists li span {
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  background-color: #f5f5f5;
+}
+
+.left-side, .right-side {
+  display: flex;
+}
+
+.left-side {
+  width: 33.5rem;
+  border-right: .2rem solid #eaeaea;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.right-side {
+  width: 36.3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-area {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.logo {
+  background-image: url(images/foxplayer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 9.6rem;
+  height: 9.6rem;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.add-playlist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-playlist h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  line-height: 3.1rem;
+}
+
+.ion-android-add, .ion-ios-star {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+.ion-ios-star {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.ion-android-close {
+  font-size: 1.8rem;
+  padding-right: 1rem;
+}
+
+.artwork {
+  background-image: url(images/music-placeholder.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 13.5rem;
+  height: 13.5rem;
+}
+
+.playlists {
+  overflow: scroll;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 20.5rem;
+}
+
+.playlists li {
+  list-style: none;
+  height: 3.7rem;
+  line-height: 3.7rem;
+  padding-left: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tracks {
+  overflow: scroll;
+  height: 28rem;
+  counter-reset: section;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.song-text {
+  flex-grow: 1;
+}
+
+.song-length {
+  flex: 0 0 1rem;
+  padding-right: 1rem;
+}
+
+.tracks li:before {
+  counter-increment: section;
+  content: counter(section) " ";
+  padding-right: .5rem;
+  color: #b4b4b4;
+  flex: 0 0 1rem;
+}
+
+.tracks li {
+  height: 3.7rem;
+  line-height: 3.7rem;
+  padding-left: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.playlists li:nth-child(odd), .tracks li:nth-child(odd) {
+  background-color: #eaeaea;
+}
+
+.current-song {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.song-info {
+  padding-bottom: 1.5rem;
+}
+
+.song-info h1, .song-info h2 {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.song-info h1 {
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+}
+
+.song-info h2 {
+  font-size: 1.4rem;
+  color: #b4b4b4;
+  font-weight: 400;
+}
+
+.song-icons {
+  color: #b4b4b4;
+  display: flex;
+  align-items: center;
+}
+
+
+/* control-panel */
+
+.control-panel {
+  height: 5rem;
+  background-color: #ffffff;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2rem;
+  margin-bottom: 2rem;
+  color: #666666;
+}
+
+.control-panel i {
+  font-size: 2.5rem;
+}
+
+.control-panel span {
+  line-height: 3rem;
+}
+
+.length-slider input[type='range'] {
+  width: 30rem;
+  margin-top: 1rem;
+}
+
+.volume-slider input[type='range'] {
+  width: 8.5rem;
+  margin-top: 1rem;
 }

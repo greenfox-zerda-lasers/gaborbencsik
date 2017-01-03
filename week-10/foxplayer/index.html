@@ -3,15 +3,102 @@
   <head>
     <meta charset="utf-8">
     <title>FoxPlayer</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   </head>
   <body>
     <header>
       <h1>FoxPlayer</h1>
     </header>
     <main>
-      
+      <div class="container">
+        <section class="left-side">
+          <div class="logo-container">
+            <div class="logo-area">
+              <div class="logo"></div>
+              <div class="add-playlist">
+                <h1>Playlists</h1>
+                <i class="ion-android-add create-playlist"></i>
+              </div>
+            </div>
+            <div class="artwork"></div>
+          </div>
+          <ul class="playlists">
+            <li class="all-tracks"><span>All tracks</span></li>
+            <li class="favorites"><span>Favorites</span></li>
+            <li class="playlist-item">
+              <span>Relaxing music for programming</span>
+              <i class="ion-android-close"></i>
+            </li>
+            <li class="playlist-item">
+              <span>Party</span>
+              <i class="ion-android-close"></i>
+            </li>
+          </ul>
+        </section>
+        <section class="right-side">
+          <div class="current-song">
+            <div class="song-info">
+              <h1>Song Title - Fucking good song</h1>
+              <h2>Motherfucking artist</h2>
+            </div>
+            <div class="song-icons">
+              <i class="ion-android-add song-to-playlist"></i>
+              <i class="ion-ios-star"></i>
+            </div>
+          </div>
+          <ul class="tracks">
+            <li>
+              <span class="song-text">First song</span>
+              <span class="song-length">2:45</span></li>
+            <li>
+              <span class="song-text">Second song</span>
+              <span class="song-length">2:45</span></li>
+            <li>
+              <span class="song-text">New song</span>
+              <span class="song-length">2:45</span></li>
+            <li>
+              <span class="song-text">Brand new song</span>
+              <span class="song-length">2:45</span></li>
+            <li>
+              <span class="song-text">Hey hey song</span>
+              <span class="song-length">2:45</span></li>
+            <li>
+              <span class="song-text">Fresh song</span>
+              <span class="song-length">2:45</span></li>
+            <li>
+              <span class="song-text">Cooool song</span>
+              <span class="song-length">2:45</span></li>
+            <li>
+              <span class="song-text">Other new song</span>
+              <span class="song-length">2:45</span></li>
+            <li>
+              <span class="song-text">Brand new song</span>
+              <span class="song-length">2:45</span></li>
+            <li>
+              <span class="song-text">Hey hey song</span>
+              <span class="song-length">3:00</span></li>
+          </ul>
+        </section>
+      </div>
+      <section class="control-panel">
+        <i class="ion-ios-rewind"></i>
+        <i class="ion-ios-play"></i>
+        <i class="ion-ios-fastforward"></i>
+        <span class="remaining-time">4:45</span>
+        <div class="length-slider">
+          <input type="range" value="0">
+        </div>
+        <span class="total-length">6:45</span>
+        <i class="ion-shuffle"></i>
+        <i class="ion-android-volume-mute"></i>
+        <div class="volume-slider">
+          <input type="range" min="0" max="100" value="">
+        </div>
+      </section>
     </main>
-
+    <audio src=""></audio>
+    <script src="script.js" type="text/javascript"></script>
   </body>
 </html>
