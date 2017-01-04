@@ -27,15 +27,15 @@ var tracks = [
 ];
 
 
-server.use(function use(req, res, next) {
+app.use(function use(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE');
   next();
 });
 
-server.use(bodyParser.urlencoded({ extended: false }));
-server.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Setup server
 
