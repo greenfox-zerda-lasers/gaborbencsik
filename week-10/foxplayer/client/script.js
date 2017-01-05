@@ -1,4 +1,6 @@
-console.log('script is running')
+'use strict';
+
+console.log('script is running');
 
 const addEvents = () => {
   let createPlaylist = document.querySelector('.create-playlist');
@@ -80,6 +82,52 @@ const uiModule = {
   },
 
 }
+
+const ajax = {
+
+  request: function(method, resource, data, callback) {
+    let req = new XMLHttpRequest();
+    req.open(method,'http://localhost:3000/'+ resource, true);
+    req.setRequestHeader("Content-Type", "application/json");
+    req.send(data);
+    req.onreadystatechange = function f(res) {
+      let appData;
+      if (req.readyState === XMLHttpRequest.DONE) {
+        appData = JSON.parse(red, res);
+        callback(appData);
+      }
+    };
+  },
+
+  getPlaylists: function (callback) {
+    request('GET', '/playlists', null, callback);
+  },
+
+  postNewPlaylist: function (input, callback) {
+    request('POST', '/playlists', /* ide még kell a json.stringify */)
+  },
+
+  deletePlaylist: function () {
+
+  },
+
+  getAllSongs: function () {
+
+  },
+
+  getPlaylistSongs: function () {
+
+  },
+
+  postSongToPlaylist: function () {
+
+  },
+
+  deleteSongFromPlaylist: function () {
+
+  }
+}
+
 
 
 addEvents();
