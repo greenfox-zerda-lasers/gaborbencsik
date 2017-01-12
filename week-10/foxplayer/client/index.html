@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <title>FoxPlayer</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css">
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vex.css">
+    <link rel="stylesheet" href="vex-theme-os.css">
+    <link rel="stylesheet" href="rangeSlider.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
   </head>
   <body>
     <header>
@@ -40,7 +43,7 @@
         <section class="right-side">
           <div class="current-song">
             <div class="song-info">
-              <h1>Song Title - Fucking good song</h1>
+              <h1>Song Title - Good song</h1>
               <h2>Motherfucking artist</h2>
             </div>
             <div class="song-icons">
@@ -88,17 +91,58 @@
         <i class="ion-ios-fastforward"></i>
         <span class="remaining-time">4:45</span>
         <div class="length-slider">
-          <input type="range" value="0">
+          <input type="range" min="0" max="1" value="0">
         </div>
         <span class="total-length">6:45</span>
         <i class="ion-shuffle"></i>
         <i class="ion-android-volume-mute"></i>
         <div class="volume-slider">
-          <input type="range" min="0" max="100" value="">
+          <input type="range" min="0" max="1">
         </div>
       </section>
     </main>
-    <audio src=""></audio>
+    <audio src="../music/Ars_Sonor_-_02_-_Never_Give_Up.mp3"></audio>
+
+    <script src="rangeSlider.js"></script>
+    <script>
+      (function () {
+         var slider = document.querySelectorAll('input[type="range"]');
+         rangeSlider.create(slider[0], {
+        // Basic rangeSlider initialization
+          min: 0,
+          max: 100,
+          value : 0,
+          borderRadius : 3,
+          buffer : 0,
+          minEventInterval : 1000,
+          // Callback function
+          onInit: function () {
+          },
+          // Cal  lback function
+          onSlideStart: function (value, percent, position) {
+            console.info('onSlideStart', 'value: ' + value, 'percent: ' + percent, 'position: ' + position);
+          },
+          // Callback function
+          onSlide: function (value, percent, position) {
+            // media.currentTime = percent * position;
+            // value = (media.currentTime / media.duration) * 100;
+            // console.log(value);
+            console.log('onSlide', 'value: ' + value, 'percent: ' + percent, 'position: ' + position);
+          },
+          // Callback function
+          onSlideEnd: function (value, percent, position) {
+            console.warn('onSlideEnd', 'value: ' + value, 'percent: ' + percent, 'position: ' + position);
+          }
+        });
+        console.dir(slider);
+        // var giveMeSomeEvents = true;
+        // slider.rangeSlider.update({min : 0, max : 20, step : 0.5, value : 1.5, buffer : 70}, giveMeSomeEvents);
+      })();
+    </script>
+    <script src="vex.combined.min.js"></script>
+    <script>
+      vex.defaultOptions.className = 'vex-theme-os'
+    </script>
     <script src="script.js" type="text/javascript"></script>
   </body>
 </html>

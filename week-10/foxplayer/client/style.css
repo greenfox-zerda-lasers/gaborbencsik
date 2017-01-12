@@ -107,7 +107,7 @@ i, .song-text, .song-info, .playlists li span {
 }
 
 .playlists {
-  overflow: scroll;
+  overflow-y: auto;
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
@@ -124,7 +124,7 @@ i, .song-text, .song-info, .playlists li span {
 }
 
 .tracks {
-  overflow: scroll;
+  overflow-y: auto;
   height: 28rem;
   counter-reset: section;
   list-style: none;
@@ -215,6 +215,11 @@ i, .song-text, .song-info, .playlists li span {
   line-height: 3rem;
 }
 
+.length-slider{
+  width: 30rem;
+  margin-top: 1rem;
+}
+
 .length-slider input[type='range'] {
   width: 30rem;
   margin-top: 1rem;
@@ -223,4 +228,20 @@ i, .song-text, .song-info, .playlists li span {
 .volume-slider input[type='range'] {
   width: 8.5rem;
   margin-top: 1rem;
+}
+
+/* slider fix */
+
+.rangeSlider {
+  height: 1rem;
+}
+
+.rangeSlider__handle {
+  width: 2rem;
+  height: 2rem;
+  margin-top: .5rem;
+}
+
+.rangeSlider__fill {
+  height: 1rem;
 }

@@ -49,7 +49,7 @@ function App() {
     }.bind(this));
     setTimeout(function() {
       listContainer.classList.add("is-loaded");
-    }, 0);
+    }, 1000);
   };
 
   this.createList = function(text, id, completed) {
@@ -65,6 +65,7 @@ function App() {
     span.innerHTML = text;
     span.setAttribute('id', id);
     span.dataset.completed = completed;
+
     var trashI = document.createElement('i');
     listItem.appendChild(trashI);
     trashI.classList.add("ion-ios-trash-outline");
