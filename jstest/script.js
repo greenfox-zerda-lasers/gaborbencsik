@@ -1,24 +1,25 @@
 'use strict';
 
-const square = document.getElementById('1');
-const runningObject = document.getElementById('2');
+const scrollToKingdom = {
+
+  getCoords: function (selector) {
+    let element = document.querySelector(selector);
+    let x = (element.offsetLeft-(window.innerWidth-element.clientWidth)/2);
+    let y = (element.offsetTop-(window.innerHeight-element.clientHeight)/2);
+    return {
+      x: x,
+      y: y
+    }
+  },
+
+  toNode: function (selector) {
+    let coords = this.getCoords(selector);
+    window.scroll({top: coords.y, left: coords.x, behavior: 'smooth'});
+  }
+};
+
 const button = document.querySelector('.button');
-const runButton = document.querySelector('.run');
-let x = (square.offsetLeft-(window.innerWidth-square.clientWidth)/2);
-let y = (square.offsetTop-(window.innerHeight-square.clientHeight)/2);
 
-const run = () => {
-  window.scroll({top: 0, left: 0});
-}
-
-const scrollToSquare = () => {
-  window.scroll({top: y, left: x, behavior: 'smooth'});
-}
-
-button.addEventListener('click', scrollToSquare);
-runButton.addEventListener('click', run);
-
-window.addEventListener("scroll", function() {
-  console.log(window.scrollX);
-  console.log(window.scrollY);
+button.addEventListener('click', function() {
+  scrollToKingdom.toNode('#k1');
 });

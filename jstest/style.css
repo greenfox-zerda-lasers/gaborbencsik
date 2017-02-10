@@ -16,12 +16,6 @@ body {
   z-index: 100;
 }
 
-.run {
-  position: fixed;
-  top: 40px;
-  left: 10px;
-  z-index: 100;
-}
 
 .object {
   width: 200px;
@@ -31,13 +25,4 @@ body {
   top: 900px;
   left: 1700px;
   border-radius: 50%;
-}
-
-.running-object {
-  width: 200px;
-  height: 200px;
-  background-color: blue;
-  position: absolute;
-  top: 100px;
-  left: 200px;
 }
