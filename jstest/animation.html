@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="style.css" type"text/css"> -->
+    <title>requestAnimationFrame</title>
+    <style>
+  		.thing {
+  			width: 10px;
+  			height: 10px;
+  			background: red;
+  		}
+  		.progress {
+  			width: 300px;
+  			border: 1px solid black;
+  			height: 10px;
+  		}
+	</style>
+  </head>
+  <body>
+    <div class="progress">
+		<div class="thing"></div>
+	</div>
+	<script>
+		var e = document.querySelector('.thing');
+		var left = 0;
+		var max = 300;
+
+		function anim() {
+			left++;
+			var val = left / 300 * 100;
+			e.style.width = val + '%';
+
+			if(val < 100) {
+				requestAnimationFrame(anim);
+			}
+		}
+
+		anim();
+
+	</script>
+
+  </body>
+</html>
